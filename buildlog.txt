@@ -1,0 +1,642 @@
+# Bake Begins!
+### (1 of 6) Copy sources
+$ cp -a /home/travis/build/fontdirectory/snippet/METADATA.json /home/travis/build/fontdirectory/snippet/builds/build
+$ cp -a /home/travis/build/fontdirectory/snippet/DESCRIPTION.en_us.html /home/travis/build/fontdirectory/snippet/builds/build
+$ cp -a /home/travis/build/fontdirectory/snippet/FONTLOG.txt /home/travis/build/fontdirectory/snippet/builds/build
+$ cp -a src/Snippet.ufo Snippet.ttf.ttx src/Snippet.otf.ttx src/Snippet-TTF.sfd src/Snippet.otf.ttx src/Snippet.otf._p_o_s_t.ttx src/Snippet.otf._n_a_m_e.ttx src/Snippet.otf._m_a_x_p.ttx src/Snippet.otf._k_e_r_n.ttx src/Snippet.otf._h_m_t_x.ttx src/Snippet.otf._h_h_e_a.ttx src/Snippet.otf._h_e_a_d.ttx src/Snippet.otf._c_m_a_p.ttx src/Snippet.otf.O_S_2f_2.ttx src/Snippet.otf.GlyphOrder.ttx src/Snippet.otf.G_P_O_S_.ttx src/Snippet.otf.C_F_F_.ttx Snippet.ttf._p_r_e_p.ttx Snippet.ttf._p_o_s_t.ttx Snippet.ttf._n_a_m_e.ttx Snippet.ttf._m_a_x_p.ttx Snippet.ttf._l_o_c_a.ttx Snippet.ttf._k_e_r_n.ttx Snippet.ttf._h_m_t_x.ttx Snippet.ttf._h_h_e_a.ttx Snippet.ttf._h_e_a_d.ttx Snippet.ttf._g_l_y_f.ttx Snippet.ttf._g_a_s_p.ttx Snippet.ttf._c_m_a_p.ttx Snippet.ttf.O_S_2f_2.ttx Snippet.ttf.GlyphOrder.ttx Snippet.ttf.F_F_T_M_.ttx src/Snippet.otf._p_o_s_t.ttx src/Snippet.otf._n_a_m_e.ttx src/Snippet.otf._m_a_x_p.ttx src/Snippet.otf._k_e_r_n.ttx src/Snippet.otf._h_m_t_x.ttx src/Snippet.otf._h_h_e_a.ttx src/Snippet.otf._h_e_a_d.ttx src/Snippet.otf._c_m_a_p.ttx src/Snippet.otf.O_S_2f_2.ttx src/Snippet.otf.GlyphOrder.ttx src/Snippet.otf.G_P_O_S_.ttx src/Snippet.otf.C_F_F_.ttx /home/travis/build/fontdirectory/snippet/builds/build/sources
+### (2 of 6) pyfontaine
+### (3 of 6) Run upstream tests
+$ fontbakery-check.py upstream-repo sources
+$ fontaine --collections subsets --text /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.otf.ttx /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ttf.ttx /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet-TTF.sfd > fontaine.txt
+WARNING: Please install [PyICU](https://pypi.python.org/pypi/PyICU) toenable [feature], perhaps with: pip install pyicu
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_contours(): FAIL
+pyfontaine error: Not a TrueType or OpenType font (bad sfntVersion)
+pyfontaine process has been failed
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_points(): FAIL
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_test_prepolation_glyph_names(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_component(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_mark_to_mark(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_own_glyphs(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_bakery_yaml_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_copyright_notices_same_across_family(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_description_html_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_fontlog_txt_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_metadata_json_exists(): OK
+$ fontbakery-check.py upstream Snippet.ufo
+bakery_lint.tests.upstream.test_unicode_value_should_appear_only_once_per_font.UnicodeValueShouldAppearOnlyOnce.testUnicodeValue(): FAIL
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): ERROR
+bakery_lint.tests.upstream.test_contour_count.TestContourCount.test_contour_count(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_has_rupee(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A(): OK
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A_a_glyph_instance(): OK
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_ended_ufo(): OK
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_folder(): OK
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_fsType_eq_1(): FAIL
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_it_exists(): OK
+Use of undefined glyph class, @_kern_A_left, on line 309 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 310 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 311 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 312 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 313 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 314 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 315 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 316 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 317 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_left, on line 318 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_O_left, on line 319 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_O_left, on line 320 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_O_left, on line 321 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_O_left, on line 322 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_E_left, on line 323 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_E_left, on line 324 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_E_left, on line 325 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_U, on line 326 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 327 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 328 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 329 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 330 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 331 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 332 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 333 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 334 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 335 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 336 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 337 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 338 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 339 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_Y, on line 340 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_a_left, on line 341 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_a_left, on line 342 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 343 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 344 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 345 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 346 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 347 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 348 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 349 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_left, on line 350 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_e_left, on line 351 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_e_left, on line 352 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_y, on line 353 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 354 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 355 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 356 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 357 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 358 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 359 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 360 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 361 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 362 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 363 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 364 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 365 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 366 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 367 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 368 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 369 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 370 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 371 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 372 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 373 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 374 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_a_right, on line 376 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_right, on line 377 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 378 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_right, on line 380 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 381 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 382 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 383 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 384 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 385 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 386 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 387 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_right, on line 388 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_a_right, on line 389 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_right, on line 390 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_n_right, on line 391 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_u, on line 392 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_y, on line 393 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 394 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 395 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 396 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_O_right, on line 397 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_right, on line 398 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_O_right, on line 399 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_right, on line 401 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_n_right, on line 402 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_u, on line 403 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_y, on line 404 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 405 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quotebase9, on line 406 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote9, on line 407 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_A_right, on line 408 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_a_right, on line 409 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_o_right, on line 410 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_n_right, on line 411 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Use of undefined glyph class, @_kern_quote6, on line 412 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Expected 'kern' in lookup definition on line 413 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+Expected ';' at statement end on line 413 of /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo/features.fea
+There were errors when parsing the feature file and the features have not been applied
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_familyname_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_fullfontname_less_than_64_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_consistof_allowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_less_than_30_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_stylename_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_weight_value_range_between_250_and_900(): OK
+$ fontbakery-check.py upstream-ttx Snippet.otf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.otf.ttx /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ fontbakery-check.py upstream-ttx Snippet.ttf.ttx
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): FAIL
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ttf.ttx /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ fontbakery-check.py upstream Snippet-TTF.sfd
+bakery_lint.tests.upstream.test_unicode_value_should_appear_only_once_per_font.UnicodeValueShouldAppearOnlyOnce.testUnicodeValue(): ERROR
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): ERROR
+bakery_lint.tests.upstream.test_contour_count.TestContourCount.test_contour_count(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_has_rupee(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A_a_glyph_instance(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_ended_ufo(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_folder(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_fsType_eq_1(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_it_exists(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_familyname_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_fullfontname_less_than_64_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_consistof_allowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_less_than_30_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_stylename_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_weight_value_range_between_250_and_900(): OK
+### (4 of 6) Convert sources to TTF
+$ ttx -d /home/travis/build/fontdirectory/snippet/builds/build /home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet-Regular.ttx
+strippedname:/home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet-TTF.sfd
+strippedname:/home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet.ufo
+Compiling "/home/travis/build/fontdirectory/snippet/builds/build/sources/Snippet-Regular.ttx" to "/home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'prep' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'kern' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'FFTM' table...
+### Test Snippet-Regular.ttf
+$ fontbakery-check.py result Snippet-Regular.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): FAIL
+$ fontbakery-fix-ascii-fontmetadata.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+Warning: Mac string is a subset of the Windows string in the 'name' table
+ for the Copyright string in the English (US) language.
+Warning: Mac string is a subset of the Windows string in the 'name' table
+ for the License string in the English (US) language.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ fontbakery-fix-dsig.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF Snippet-Regular.ttf
+$ ls -l 'Snippet-Regular.ttf'* # look at the size savings of that subset process
+Snippet-Regular.ttf.opt: 36984 bytes
+Snippet-Regular.ttf: 38508 bytes
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.opt /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+### Autohint TTFs (ttfautohint) Snippet-Regular.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf '/home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf: 36984 bytes
+/home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.autohint.ttf: 54148 bytes
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.autohint.ttf /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+### Subset TTFs (pyftsubset) Snippet-Regular.ttf
+$ pyftsubset Snippet-Regular.latin
+$ pyftsubset Snippet-Regular.menu
+strippedname:/home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ fontbakery-build-font2ttf.py sources/Snippet.ufo Snippet.ttf
+Success: Generated OpenType-TTF (/home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf)
+### Test Snippet.ttf
+$ fontbakery-check.py result Snippet.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): FAIL
+$ fontbakery-fix-ascii-fontmetadata.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+Warning: Mac and Windows entries in the 'name' table differ for the
+ Copyright string in the language English (US)
+ Mac String: Copyright (c) 2011 Gesine Todt E(www.gesine-todt.de), with Reserved Font Name "Snippet". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+Windows String: Copyright (c) 2011 Ge
+Warning: Mac and Windows entries in the 'name' table differ for the
+ License string in the language English (US)
+ Mac String: Copyright (c) 2011 Gesine Todt E(www.gesine-todt.de), with Reserved Font Name "Snippet". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+Windows String: Copyright (c) 2011 Gesi
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): FAIL
+$ fontbakery-fix-vertical-metrics.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+$ fontbakery-fix-vertical-metrics.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf /home/travis/build/fontdirectory/snippet/builds/build/Snippet-Regular.ttf
+Parameter              Snippet.ttf    Snippet-Regular.ttf    
+ymax                   890            890                    
+hhea.ascent            890            890                    
+OS/2.sTypoAscender     890            890                    
+OS/2.usWinAscent       890            890                    
+ymin                   -261           -261                   
+hhea.descent           -261           -261                   
+OS/2.sTypoDescender    -261           -261                   
+OS/2.usWinDescent      261            261                    
+hhea.lineGap           0              0                      
+OS/2.sTypoLineGap      0              0                      
+hhea total             1151           1151                   
+typo total             1151           1151                   
+win total              1151           1151                   
+UPM:Heights            1000:1151      1000:1151              
+UPM:Heights %          115 %          115 %                  
+
+
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): FAIL
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF Snippet.ttf
+$ ls -l 'Snippet.ttf'* # look at the size savings of that subset process
+Snippet.ttf.opt: 22940 bytes
+Snippet.ttf: 25060 bytes
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf.opt /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+### Autohint TTFs (ttfautohint) Snippet.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf '/home/travis/build/fontdirectory/snippet/builds/build/Snippet.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/snippet/builds/build/Snippet.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf: 22940 bytes
+/home/travis/build/fontdirectory/snippet/builds/build/Snippet.autohint.ttf: 39188 bytes
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet.autohint.ttf /home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+### Subset TTFs (pyftsubset) Snippet.ttf
+$ pyftsubset Snippet.latin
+$ pyftsubset Snippet.menu
+strippedname:/home/travis/build/fontdirectory/snippet/builds/build/Snippet.ttf
+$ fontbakery-build-font2ttf.py sources/Snippet-TTF.sfd Snippet-TTF.ttf
+Success: Generated OpenType-TTF (/home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf)
+### Test Snippet-TTF.ttf
+$ fontbakery-check.py result Snippet-TTF.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): FAIL
+$ fontbakery-fix-ascii-fontmetadata.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ fontbakery-fix-gasp.py --set=15 /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+Warning: Mac string is a subset of the Windows string in the 'name' table
+ for the Copyright string in the English (US) language.
+Warning: Mac string is a subset of the Windows string in the 'name' table
+ for the License string in the English (US) language.
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ fontbakery-fix-glyph-private-encoding.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ fontbakery-fix-opentype-names.py /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ fontbakery-fix-fstype.py --autofix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf.fix /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_menu_file_exists(): FAIL
+### Optimize TTF Snippet-TTF.ttf
+$ ls -l 'Snippet-TTF.ttf'* # look at the size savings of that subset process
+Snippet-TTF.ttf.opt: 27508 bytes
+Snippet-TTF.ttf: 29244 bytes
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf.opt /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+### Autohint TTFs (ttfautohint) Snippet-TTF.ttf
+$ ttfautohint -l 7 -r 28 -G 50 -x 13 -w "G" /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf '/home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.autohint.ttf'
+
+$ ls -l /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf: 27508 bytes
+/home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.autohint.ttf: 44416 bytes
+$ mv /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.autohint.ttf /home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+### Subset TTFs (pyftsubset) Snippet-TTF.ttf
+$ pyftsubset Snippet-TTF.latin
+$ pyftsubset Snippet-TTF.menu
+strippedname:/home/travis/build/fontdirectory/snippet/builds/build/Snippet-TTF.ttf
+### (5 of 6) Generate METADATA.json (fontbakery-build-metadata.py)
+$ fontbakery-build-metadata.py /home/travis/build/fontdirectory/snippet/builds/build
+{} exists
+Designer's name from font is: Gesine Todt
+Original size: 54148\nGzip size: 25784
+Family Name: Snippet
+PS Name: Snippet
+Full Name: Snippet
+Style: normal
+Weight: 400
+Filename: Snippet-TTF.ttf
+Copyright: Copyright (c) 2011 Gesine Todt E(www.gesine-todt.de), with Reserved Font Name "Snippet". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+Family Name: Snippet
+PS Name: Snippet
+Full Name: Snippet
+Style: normal
+Weight: 400
+Filename: Snippet.ttf
+Copyright: Copyright (c) 2011 Gesine Todt  (www.gesine-todt.de), with Reserved Font Name "Snippet". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+Family Name: Snippet
+PS Name: Snippet
+Full Name: Snippet
+Style: normal
+Weight: 400
+Filename: Snippet-Regular.ttf
+Copyright: Copyright (c) 2011 Gesine Todt E(www.gesine-todt.de), with Reserved Font Name "Snippet". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+### (6 of 6) Run tests for METADATA.json
+$ fontbakery-check.py metadata METADATA.json
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin(): OK
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_menu(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_more_than_500b(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_valid_html(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_daltonmaag_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontbureau_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontscom_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontshop_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontsmith_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_houseind_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_myfonts_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_veer_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_family_is_listed_in_gwf(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_atleast_latin_menu_subsets_exist(): OK
+/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/tests/metadata_test.py:141: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  self.assertTrue(designer in designers,
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_designer_exists_in_profiles_csv(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_items_dicts(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_no_dupes(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_has_unique_style_weight_pairs(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_license(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_no_unknown_top_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_subsets_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_top_keys_types(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_contains_correct_rfn(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_is_consistent_across_family(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_matches_pattern(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_metadata_copyright_size(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.TestFontOnDiskFamilyEqualToMetadataJSON.test_font_on_disk_family_equal_in_metadata_json(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.TestPostScriptNameInMetadataEqualFontOnDisk.test_postscriptname_in_metadata_equal_to_font_on_disk(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_font_name_matches_family(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family_values_are_all_the_same(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_filename_matches_postscriptname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_font_have_regular(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_is_equal_to_internal_font_fullname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_400(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_normal(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_copyrighttxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_description_exists(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_fontlogtxt_exists(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_licensetxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_subsets_exists.CheckSubsetsExist.test_check_subsets_exists(): OK
+bakery_lint.tests.downstream.test_check_monospace_agreements.CheckMonospaceAgreement.test_check_monospace_agreement(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckItalicStyleMatchesMacStyle.test_check_italic_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckNormalStyleMatchesMacStyle.test_check_normal_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_matches_nametable.CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable(): OK
+bakery_lint.tests.downstream.test_check_metadata_fields.CheckMetadataFields.test_check_metadata_fields(): OK
+bakery_lint.tests.downstream.test_check_menu_contains_proper_glyphs.CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_encodings_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_names_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_number_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_font_name_not_in_camelcase.CheckFontNameNotInCamelCase.test_fontname_not_in_camel_case(): OK
+bakery_lint.tests.downstream.test_check_files_menu_agreements.CheckFontsMenuAgreements.test_menu_file_agreement(): OK
+bakery_lint.tests.downstream.test_check_familyname_matches_fontnames.CheckFamilyNameMatchesFontNames.test_check_familyname_matches_fontnames(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckCanonicalWeights.test_check_canonical_weights(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckPostScriptNameMatchesWeight.test_postscriptname_contains_correct_weight(): FAIL
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFontWeightSameAsInMetadata.test_font_weight_same_as_in_metadata(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFullNameEqualCanonicalName.test_metadata_contains_current_font(): OK
+bakery_lint.tests.downstream.test_check_canonical_styles.CheckCanonicalStyles.test_check_canonical_styles(): OK
+bakery_lint.tests.downstream.test_check_canonical_filenames.CheckCanonicalFilenames.test_check_canonical_filenames(): FAIL
+{
+  "name": "Snippet", 
+  "designer": "Gesine Todt", 
+  "license": "OFL", 
+  "visibility": "External", 
+  "category": "Sans Serif", 
+  "size": 19466, 
+  "fonts": [
+    {
+      "name": "Snippet", 
+      "postScriptName": "Snippet", 
+      "fullName": "Snippet", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "Snippet-TTF.ttf", 
+      "copyright": "Copyright (c) 2011 Gesine Todt E(www.gesine-todt.de), with Reserved Font Name \"Snippet\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+    }, 
+    {
+      "name": "Snippet", 
+      "postScriptName": "Snippet", 
+      "fullName": "Snippet", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "Snippet.ttf", 
+      "copyright": "Copyright (c) 2011 Gesine Todt  (www.gesine-todt.de), with Reserved Font Name \"Snippet\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+    }, 
+    {
+      "name": "Snippet", 
+      "postScriptName": "Snippet", 
+      "fullName": "Snippet", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "Snippet-Regular.ttf", 
+      "copyright": "Copyright (c) 2011 Gesine Todt E(www.gesine-todt.de), with Reserved Font Name \"Snippet\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+    }
+  ], 
+  "subsets": [
+    "latin", 
+    "menu"
+  ], 
+  "dateAdded": "2011-07-20"
+}
